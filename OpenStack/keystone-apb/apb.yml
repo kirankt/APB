@@ -1,0 +1,7 @@
+id: 6422b349-fa98-40da-9129-d0bd25c4e5bf
+name: keystone-apb
+image: osp-apb/keystone-apb
+description: OpenStack Keystone
+bindable: True
+async: optional
+parameters: []

@@ -1,0 +1,31 @@
+- name: Delete keystone fernet job
+  k8s_v1_job:
+    name: keystone-fernet
+    namespace: '{{ namespace }}'
+    state: absent 
+
+- name: Delete keystone db-sync job 
+  k8s_v1_job:
+    name: keystone-db-sync
+    namespace: '{{ namespace }}' 
+    state: absent 
+
+- name: Delete keystone deployment 
+  openshift_v1_deployment_config:
+    name: keystone-api
+    namespace: '{{ namespace }}' 
+    state: absent 
+
+- name: Delete keystone service 
+  k8s_v1_service:
+    name: keystone
+    namespace: '{{ namespace }}' 
+    state: absent 
+
+- name: Delete keystone configmaps 
+  ignore_errors: yes
+  k8s_v1_config_map:
+    name: keystone
+    namespace: '{{ namespace }}' 
+    state: absent 
+    debug: yes
