@@ -1,3 +1,2 @@
-coe_host: "https://rhev-i32c-03.mpc.lab.eng.bos.redhat.com:6443"
-kube_context: "kubernetes-admin@kubernetes"
-config_file: /root/.kube/config
+registry="172.30.202.25:5000/"  # Don't forget the trailing '/'
+namespace="osp-dev"
