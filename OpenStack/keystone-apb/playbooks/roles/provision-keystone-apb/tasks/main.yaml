@@ -239,7 +239,7 @@
         ]'
     restart_policy: OnFailure 
     containers:
-      - image: 172.30.202.25:5000/{{ namespace }}/rhel-binary-keystone
+      - image: "{{registry}}{{ namespace }}/rhel-binary-keystone"
         name: keystone-db-sync
         env:
           - name: KOLLA_CONFIG_STRATEGY
@@ -268,7 +268,7 @@
     state: present
     restart_policy: OnFailure 
     containers:
-      - image: 172.30.202.25:5000/{{ namespace }}/rhel-binary-keystone-fernet
+      - image: "{{registry}}{{ namespace }}/rhel-binary-keystone-fernet"
         name: keystone-fernet-bootstrap
         command: ["kolla_keystone_bootstrap", "keystone", "keystone"]
         env:
@@ -314,7 +314,7 @@
       service: keystone
     containers:
       - name: keystone
-        image: 172.30.202.25:5000/{{ namespace }}/rhel-binary-keystone
+        image: {{registry}}{{ namespace }}/rhel-binary-keystone
         imagePullPolicy: IfNotPresent
         env:
         - name: KOLLA_CONFIG_STRATEGY
