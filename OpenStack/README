@@ -1,0 +1,8 @@
+To test the APBs using ansible-playbook command:
+
+e.g.
+ansible-playbook --verbose ~/APB/OpenStack/keystone-apb/playbooks/provision.yml -e "namespace=osp-dev"
+
+Broken:
+Need to fix the image link to the local docker registry on the APBs. Only needed if you're using local registry.
+Will work if you're using a public registry.
