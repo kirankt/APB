@@ -1,0 +1,4 @@
+To test the APBs using ansible-playbook command:
+
+e.g.
+ansible-playbook --verbose ~/APB/OpenStack/keystone-apb/playbooks/provision.yml -e "namespace=osp-dev" -e "registry=172.30.202.25:5000/"

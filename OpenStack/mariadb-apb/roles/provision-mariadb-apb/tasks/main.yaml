@@ -59,7 +59,7 @@
       galera: enabled
     containers:
       - name: mariadb 
-        image: 172.30.202.25:5000/osp-dev/rhel-binary-mariadb
+        image: "{{ registry }}{{ namespace }}/rhel-binary-mariadb"
         ports:
         - container_port: 3306 
         env:
