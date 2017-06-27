@@ -293,9 +293,9 @@
     state: present
     ports:
       - port: 5000
-        name: keystone-api-public
+        name: public-api
       - port: 35357
-        name: keystone-api-admin
+        name: admin-api
     labels:
       app: keystone-apb
       service: keystone

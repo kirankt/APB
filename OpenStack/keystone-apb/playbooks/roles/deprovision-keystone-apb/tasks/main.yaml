@@ -12,7 +12,13 @@
 
 - name: Delete keystone deployment 
   openshift_v1_deployment_config:
-    name: keystone-api
+    name: keystone
+    namespace: '{{ namespace }}' 
+    state: absent 
+
+- name: Delete keystone replication controller 
+  k8s_v1_replication_controller:
+    name: keystone-1
     namespace: '{{ namespace }}' 
     state: absent 
 
